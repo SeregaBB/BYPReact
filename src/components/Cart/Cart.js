@@ -14,7 +14,7 @@ class Cart extends Component {
         const len = this.props.planets;
         return(
 
-            <div className="cart"><img src={CartImg} width="50px" id="img_cart"/><Badge>{len}</Badge></div>
+            <div className="cart"><img src={CartImg} width="60px" id="img_cart"/><Badge>{len}</Badge></div>
         )
     }
 }

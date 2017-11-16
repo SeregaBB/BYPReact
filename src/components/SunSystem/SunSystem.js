@@ -37,11 +37,12 @@ class SunSystem extends Component {
            
             if (this.state.num === 1) {
                 console.log('Yeah, you hust Buy your first Planet!!!');
-                return <center id="yeah"><span><img src={Astro} alt="astonaut" width="50px"/><br/>Yeah! You buy Your First Planet! Check Your Cart</span></center>
+                return <center className="op" id="yeah"><span><img src={Astro} alt="astonaut" width="50px"/><br/>Yeah! You buy Your First Planet! Check Your Cart</span></center>
+
+            } else if (this.state.num > 1) {
+                return false
                 
-            } else {
-                return false;
-            }
+            } 
             
         }
         const tooltipSun = (

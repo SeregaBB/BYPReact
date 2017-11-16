@@ -7,9 +7,39 @@ body {
   from {transform: rotate(0deg)}
   to {transform: rotate(360deg)}
 }
+
+@keyframes opacityNull {
+  from {
+    opacity: 1;
+    display: block;
+    height: 60px;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+    height: 0px;
+  }
+  
+}
+
+.op {
+  position: fixed;
+  top: 50px;
+  left: 50vw;
+  margin-left: -150px;
+  animation: opacityNull 4s linear 1;
+  animation-fill-mode: forwards;
+}
 .hello {
   color: white;
   text-shadow: 0 0 0.5px black;
+}
+.hello>img {
+  transition: 1s;
+}
+.hello>img:hover {
+  filter: drop-shadow(0 0 4px white)
 }
 
 .cntr {
@@ -89,12 +119,12 @@ body {
 }
 
 .cart, .cart>img {
-  height: 50px;
+  height: 60px;
   cursor: pointer;
-  width: 50px;
+  width: 60px;
   position: absolute;
   bottom: 0px;
-  right: 0px;
+  right: 10px;
   transition: 1s;
 }
 
