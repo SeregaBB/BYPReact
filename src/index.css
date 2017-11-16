@@ -1,0 +1,98 @@
+body {
+  background: url('./img/night-sky-in-hamden.png') no-repeat;
+  background-size: 100%;
+}
+.hello {
+  color: white;
+  text-shadow: 0 0 0.5px black;
+}
+
+.cntr {
+  position: relative;
+  top: 5vh;
+}
+.planet {
+  cursor: pointer;
+  transition: 0.5s;
+}
+#sun {
+  cursor: pointer;
+  transition: 1s;
+  position: relative;
+  top: 35%;
+  left: 13%;
+  
+}
+#sun:hover, .planet:hover {
+  filter: drop-shadow(0px 0px 4px blue);
+  
+}
+
+.spin {
+  border-radius: 50%;
+  border: solid 1px white;
+  
+}
+
+#planet1 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+ margin-top: 50px;
+ 
+
+}
+
+#planet2 {
+  width: 400px;
+  height: 400px;
+  margin-top: 50px;
+  
+
+}
+
+#planet3 {
+  width: 600px;
+  height: 600px;
+  
+  
+
+}
+
+.planet {
+  width: 50px;
+  top: -25px;
+  position: relative;
+  
+}
+#sat {
+  top: -25px;
+}
+
+#earth {
+  left: -200px;
+  top: 200px;
+}
+
+#mars {
+  left: 300px;
+  top: 300px;
+}
+
+.cart, .cart>img {
+  height: 50px;
+  cursor: pointer;
+  width: 50px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  transition: 1s;
+}
+
+.cart:hover, .cart>img:hover {
+  filter: drop-shadow(0px 0px 4px white);
+}
+
+.badge { 
+  position: absolute;
+}
