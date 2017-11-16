@@ -5,6 +5,7 @@ import Mars from '../../img/mars.svg';
 import Sat from '../../img/sat.svg';
 import Logo from '../../logo.svg'
 import Cart  from '../Cart/Cart';
+import Astro from '../../img/astronaut.svg'
 import { OverlayTrigger, Tooltip} from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 
@@ -32,7 +33,17 @@ class SunSystem extends Component {
            })
       }
     render() {
-        
+        const yeah = () =>{
+           
+            if (this.state.num === 1) {
+                console.log('Yeah, you hust Buy your first Planet!!!');
+                return <center id="yeah"><span><img src={Astro} alt="astonaut" width="50px"/><br/>Yeah! You buy Your First Planet! Check Your Cart</span></center>
+                
+            } else {
+                return false;
+            }
+            
+        }
         const tooltipSun = (
             <Tooltip id="tooltip">It's a sun (not for sale)</Tooltip>
           );
@@ -47,10 +58,11 @@ class SunSystem extends Component {
           );
         return(
 
-        <div>
-            <Cart planets={this.state.num}/>
-            <span className="hello"><img src={Logo} alt="logo" width="60px"/>Here You can buy your own planet</span> 
+        <div> 
             
+            <Cart planets={this.state.num}/>
+            <span className="hello"><img src={Logo} alt="logo" width="60px"/>Here You can buy Your own planet. Just <strong>click</strong> it</span> 
+            {yeah()}
             <center className="cntr">
                 <div className="spin" id="planet3">
                     <OverlayTrigger placement="top" overlay={tooltipMars}><img onClick={this.planetClick} src={Mars} alt="" className="planet" id="mars"/></OverlayTrigger>

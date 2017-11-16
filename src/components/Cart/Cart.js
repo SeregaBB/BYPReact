@@ -1,6 +1,6 @@
 import React, { Component  } from 'react';
 import { Badge } from 'react-bootstrap';
-import CartImg from '../../img/cart.png';
+import CartImg from '../../img/cart.svg';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 class Cart extends Component {
