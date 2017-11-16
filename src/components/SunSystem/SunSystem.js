@@ -1,9 +1,9 @@
 import React, { Component  } from 'react';
 import  Sun from '../../img/Sun-animated-.gif';
-import  Earth from '../../img/earth.gif';
-import Mars from '../../img/mars.gif';
-import Sat from '../../img/sat.gif';
-
+import  Earth from '../../img/earth.svg';
+import Mars from '../../img/mars.svg';
+import Sat from '../../img/sat.svg';
+import Logo from '../../logo.svg'
 import Cart  from '../Cart/Cart';
 import { OverlayTrigger, Tooltip} from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -49,7 +49,7 @@ class SunSystem extends Component {
 
         <div>
             <Cart planets={this.state.num}/>
-            <span className="hello">Here You can buy your own planet</span> 
+            <span className="hello"><img src={Logo} alt="logo" width="60px"/>Here You can buy your own planet</span> 
             
             <center className="cntr">
                 <div className="spin" id="planet3">

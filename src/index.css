@@ -9,7 +9,7 @@ body {
 
 .cntr {
   position: relative;
-  top: 5vh;
+  top: 0vh;
 }
 .planet {
   cursor: pointer;
