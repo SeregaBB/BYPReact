@@ -8,29 +8,27 @@ import Cart  from '../Cart/Cart';
 import Astro from '../../img/astronaut.svg'
 import { OverlayTrigger, Tooltip} from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
-
+import { connect } from 'react-redux';
+import { addPlanet } from '../../actions/planets.actions';
 
 class SunSystem extends Component {
     constructor(props){
         super(props);
         this.props = props;
         this.state = {
-          planetsInCart: [],
+          planetsInCart: '',
           prices: [],
           num: 0,
         }
       }
 
       planetClick = (e)=>{
-          const planetId = e.target.id;
-          const plntCart = this.state.planetsInCart;
-          plntCart.push(planetId);
           const nums = this.state.num;
            this.setState({
-               num: nums + 1,
-               planetsInCart: plntCart, 
-
+               num: nums + 1, 
            })
+           this.props.addPlanet(e.target.id);
+
       }
     render() {
         const yeah = () =>{
@@ -81,4 +79,16 @@ class SunSystem extends Component {
     }
 }
 
-export default SunSystem;
+export default connect((state)=>{
+    return {
+        pl: state
+    };
+}, 
+(dispatch) => {
+    return {
+        addPlanet: (planet) => {
+            dispatch(addPlanet(planet));
+        }
+    }
+}
+)(SunSystem);
