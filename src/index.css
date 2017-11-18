@@ -23,6 +23,28 @@ body {
   
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    right: -100px;
+  }
+  to {
+    opacity: 0.7;
+    right: 0px;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 0.5;
+    right: 0px;
+  }
+  to {
+    opacity: 0.0;
+    right: -100px;
+  }
+}
+
 .op {
   position: fixed;
   top: 50px;
@@ -136,4 +158,47 @@ body {
 
 .badge { 
   position: absolute;
+}
+
+.hidden_cart {
+  position: fixed;
+  /*right: -100px;*/
+  height: 100vh;
+  width: 100px;
+  color: white;
+  border-left: solid 1px #CECBCB;
+  opacity: 0.5;
+  transition: 1s;
+}
+#closeCart {
+  cursor: pointer;
+  color: white;
+}
+.hiddenCRT { 
+  display: block !important;
+  animation: slideOut 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.visible {
+  display: block;
+  animation: slideIn 1s linear;
+  animation-fill-mode: forwards;
+  
+  
+}
+
+.hidden_cart:hover{
+  opacity: 1;
+}
+
+#ul_cart {
+  list-style: none;
+  padding-top: 40px;
+}
+
+#ul_cart > li {
+    padding: 10px;
+    padding-left: 0px;
+    margin-left: -15px;
 }

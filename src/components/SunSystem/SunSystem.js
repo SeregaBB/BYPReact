@@ -23,14 +23,17 @@ class SunSystem extends Component {
       }
 
       planetClick = (e)=>{
-          const nums = this.state.num;
-           this.setState({
-               num: nums + 1, 
-           })
+          //const nums = this.state.num;
+          //if (this.state.num < 3) {
+           //this.setState({
+            //   num: nums + 1, 
+           //})
+        //}
            this.props.addPlanet(e.target.id);
-
+            console.log(this.props.planet.toJSON());
       }
     render() {
+        const {planet: planetsName} = this.props;
         const yeah = () =>{
            
             if (this.state.num === 1) {
@@ -59,7 +62,7 @@ class SunSystem extends Component {
 
         <div> 
             
-            <Cart planets={this.state.num}/>
+            <Cart planets={this.props.planet.toJSON().length} planetsNames={this.props.planet.toJSON()}/>
             <span className="hello"><img src={Logo} alt="logo" width="60px"/>Here You can buy Your own planet. Just <strong>click</strong> it</span> 
             {yeah()}
             <center className="cntr">
@@ -81,7 +84,7 @@ class SunSystem extends Component {
 
 export default connect((state)=>{
     return {
-        pl: state
+        planet: state.planets
     };
 }, 
 (dispatch) => {
